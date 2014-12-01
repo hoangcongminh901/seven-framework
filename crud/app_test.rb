@@ -55,4 +55,12 @@ describe "crud application" do
     post "/bookmarks", {url: "test", title: "Test"}
     expect(last_response.status).to eq 400
   end
+
+  it "sends an error code for an invalid update request" do
+    get "/bookmarks"
+    bookmarks = JSON.parse last_response.body
+    id = bookmarks.first['id']
+    put "/bookmarks/#{id}", {url: "Invalid"}
+    expect(last_response.status).to eq 400
+  end
 end
