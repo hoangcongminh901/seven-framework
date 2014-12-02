@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BasicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Basic</title>
+  </head>
+  <body ng-controller="BasicController">
+    <div>
+      What is your name?
+      <input type="text" ng-model="greeter.name">
+    </div>
+    <div>
+      {{greeter.greeting()}}
+    </div>
+  </body>
+  <script src="../angular.min.js"></script>
+  <script src="index-basic.js"></script>
+</html>
